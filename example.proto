@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "/proto";
+
+service ExampleServer {
+    rpc MyFunction(MyFunctionRequest) returns (MyFunctionResponse) {}
+    rpc Sum(SumRequest) returns(SumResponse) {}
+}
+
+enum Client {
+    GO = 0;
+    PYTHON = 1;
+}
+
+message MyFunctionRequest {
+    Client client = 1;
+    string message = 2;
+}
+
+message MyFunctionResponse {
+    string message = 1;
+}
+
+message SumRequest {
+    int64 first = 1;
+    int64 second = 2;
+}
+
+message SumResponse {
+    int64 result = 1;
+}
