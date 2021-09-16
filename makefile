@@ -1,8 +1,8 @@
 go-server:
 	go run server/server.go
 
-go-client:
+go-cli:
 	go run go/client.go
 
-py-client:
+py-cli:
 	python3 python/client.py
